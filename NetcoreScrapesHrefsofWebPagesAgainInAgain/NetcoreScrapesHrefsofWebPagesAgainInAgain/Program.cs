@@ -43,6 +43,8 @@ namespace NetcoreScrapesHrefsofWebPagesAgainInAgain
          
              List<string> hrefliste =ATagParse(url);
              ListCount(hrefliste);
+             hrefliste=hrefliste.Distinct().ToList();
+             ListCount(hrefliste);
             foreach (var href in hrefliste)
              {
                  if (href == null)
@@ -51,13 +53,17 @@ namespace NetcoreScrapesHrefsofWebPagesAgainInAgain
                  }
                  List<string> hrefliste2= ATagParse(href);
                  ListCount(hrefliste2);
-                 foreach (var href2 in hrefliste2)
+                 hrefliste2 = hrefliste2.Distinct().ToList();
+                 ListCount(hrefliste2);
+                foreach (var href2 in hrefliste2)
                 {
                     if (href2 == null)
                     {
                         break;
                     }
                     List<string> hrefliste3 = ATagParse(href2);
+                    ListCount(hrefliste3);
+                    hrefliste3 = hrefliste3.Distinct().ToList();
                     ListCount(hrefliste3);
                     foreach (var href3 in hrefliste3)
                     {
@@ -67,14 +73,18 @@ namespace NetcoreScrapesHrefsofWebPagesAgainInAgain
                         }
                         List<string> hrefliste4 = ATagParse(href3);
                         ListCount(hrefliste4);
+                        hrefliste4 = hrefliste4.Distinct().ToList();
+                        ListCount(hrefliste4);
                         foreach (var href4 in hrefliste4)
                         {
                             if (href4 == null)
                             {
                                 break;
                             }
-                            List<string> hreflist5 = ATagParse(href4);
-                            ListCount(hreflist5);
+                            List<string> hrefliste5 = ATagParse(href4);
+                            ListCount(hrefliste5);
+                            hrefliste5 = hrefliste5.Distinct().ToList();
+                            ListCount(hrefliste5);
                         }
                     }
                  }
